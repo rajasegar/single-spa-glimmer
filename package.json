@@ -1,0 +1,25 @@
+{
+  "name": "single-spa-glimmer",
+  "version": "0.0.0",
+  "description": "single-spa plugin for Glimmer.js",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git push && git push --tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajasegar/single-spa-glimmer.git"
+  },
+  "keywords": [
+  "single-spa",
+  "glimmer"
+  ],
+  "author": "Rajasegar Chandran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajasegar/single-spa-glimmer/issues"
+  },
+  "homepage": "https://github.com/rajasegar/single-spa-glimmer#readme"
+}
