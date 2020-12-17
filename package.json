@@ -1,6 +1,6 @@
 {
   "name": "single-spa-glimmer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "single-spa plugin for Glimmer.js",
   "main": "index.js",
   "module": "index.js",
@@ -13,8 +13,8 @@
     "url": "git+https://github.com/rajasegar/single-spa-glimmer.git"
   },
   "keywords": [
-  "single-spa",
-  "glimmer"
+    "single-spa",
+    "glimmer"
   ],
   "author": "Rajasegar Chandran",
   "license": "MIT",
