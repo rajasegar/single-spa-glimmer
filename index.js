@@ -1,11 +1,11 @@
 const defaultOpts = {
   renderComponent: null, // renderComponent function from @glimmer/core
-  App: null, // parent Component for the app
-  rootElement: null,  // mount point for the App component
+  App: null, //parent Component for the app
+  root: null,  // root element DOM id eg. #app
+  owner: null, // owner object for the app with service injections
 }
 
 export default function singleSpaGlimmer(userOpts) {
-  console.log('inside single spa glimmer');
   if (typeof userOpts !== 'object') {
     throw new Error(`single-spa-glimmer requires a configuration object`);
   }
@@ -37,9 +37,15 @@ function bootstrap(opts) {
 function mount(opts) {
   return Promise
     .resolve()
-  .then(() => {
-    const { renderComponent, App, rootElement } = opts;
-    renderComponent(App, rootElement);
+    .then(() => {
+      // Turning off validator registration for allowing multiple glimmer apps in same page
+      globalThis[Symbol.for('GLIMMER_VALIDATOR_REGISTRATION')] = false;
+      const { renderComponent, App, root, owner } = opts;
+      const element = document.getElementById(root);
+      renderComponent(App, { 
+        element,
+        owner,
+      });
     });
 }
 
